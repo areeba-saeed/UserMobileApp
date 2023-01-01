@@ -12,7 +12,6 @@ import {
 } from '@react-navigation/drawer';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import LogIn from '../screens/LogIn';
 
@@ -56,7 +55,7 @@ const CustomDrawer = props => {
       </DrawerContentScrollView>
       <View style={{padding: 20, borderTopWidth: 1, borderTopColor: '#ccc',backgroundColor:'#fff'}}>
         <TouchableOpacity 
-        //onPress={props.navigation.navigate(LogIn)} 
+        // onPress={props.navigation.navigate(LogIn)} 
         style={{paddingVertical: 15}}>
           <View style={{flexDirection: 'row', alignItems: 'center'}}>
             <Ionicons name="exit-outline" size={22} />

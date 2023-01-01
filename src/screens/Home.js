@@ -11,18 +11,15 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import AntDesign from "react-native-vector-icons/AntDesign";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import Feather from "react-native-vector-icons/Feather";
-import { useNavigation } from "@react-navigation/native";
+import { DrawerActions, useNavigation } from "@react-navigation/native";
 import { windowHeight } from "../../src/utils/Dimensions";
 import { windowWidth } from "../../src/utils/Dimensions";
-import UserTable from "../components/UserTable";
 import { ScrollView } from "react-native-gesture-handler";
 import Notifications from "./Notifications";
-import Users from "./Users";
 import Weight from "react-native-vector-icons/FontAwesome5";
 import Battery from "react-native-vector-icons/Entypo";
 import Cylinder from "react-native-vector-icons/MaterialCommunityIcons";
-import Refuel from "./Invoice";
-import SearchBar from "../components/SearchBar";
+
 import { SelectList } from "react-native-dropdown-select-list";
 
 const Home = ({ navigation }) => {
@@ -130,7 +127,7 @@ const Home = ({ navigation }) => {
               >
                 <View
                   style={{
-                    width: 150,
+                    width: 160,
                     height: 135,
                     backgroundColor: "#E6E6E6",
                   }}
@@ -155,10 +152,10 @@ const Home = ({ navigation }) => {
                 </View>
                 <View
                   style={{
-                    width: 150,
+                    width: 160,
                     height: 135,
                     backgroundColor: "#E6E6E6",
-                    marginLeft: 24,
+                    marginLeft: 14,
                   }}
                 >
                   <Battery
@@ -182,10 +179,10 @@ const Home = ({ navigation }) => {
               </View>
               <View
                 style={{
-                  width: 325,
+                  width: 335,
                   height: 120,
                   backgroundColor: "#E6E6E6",
-                  marginTop: 34,
+                  marginTop: 14,
                   marginLeft: -3,
                 }}
               >

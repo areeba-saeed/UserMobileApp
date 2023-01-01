@@ -16,6 +16,7 @@ import { windowHeight, windowWidth } from "../utils/Dimensions";
 import * as ImagePicker from "expo-image-picker";
 import Home from "./Home";
 import { Row, Rows, Table } from "react-native-table-component";
+import { useNavigation } from "@react-navigation/native";
 const Invoice = ({ navigation }) => {
   const [show, setShow] = useState(false);
 
@@ -30,6 +31,7 @@ const Invoice = ({ navigation }) => {
   };
 
   const [image, setImage] = useState(null);
+  const nav = useNavigation();
 
   const pickImage = async () => {
     // No permissions request is necessary for launching the image library
@@ -77,8 +79,8 @@ const Invoice = ({ navigation }) => {
               marginTop: 20,
             }}
           >
-            <TouchableOpacity onPress={() => navigation.navigate(Home)}>
-              <AntDesign name="back" size={30} color="#FFF" />
+            <TouchableOpacity onPress={() => nav.openDrawer()}>
+              <AntDesign name="bars" size={30} color="white" />
             </TouchableOpacity>
             <View
               style={{
