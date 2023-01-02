@@ -2,16 +2,12 @@ import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import LogIn from "../src/screens/LogIn";
-import Home from "../src/screens/Home";
 import Notifications from "../src/screens/Notifications";
-import FAQ from "../src/screens/FAQ";
-import ContactUs from "../src/screens/ContactUs";
-import AboutUs from "../src/screens/AboutUs";
-import Invoice from "../src/screens/Invoice";
 import PaymentForm from "../src/screens/PaymentForm";
-import PaymentInfo from "../src/screens/PaymentInfo";
-import History from "../src/screens/History";
 import DrawerStack from "./DrawerStack";
+import PrivacyPolicy from "../src/screens/PrivacyPolicy";
+import TermsandConditions from "../src/screens/TermsandConditions";
+
 
 const Stack = createNativeStackNavigator();
 
@@ -23,6 +19,8 @@ const MyStack = () => {
         screenOptions={{ headerShown: false }}
       >
         <Stack.Screen name="LogIn" component={LogIn} />
+        <Stack.Screen name="PrivacyPolicy" component={PrivacyPolicy} />
+        <Stack.Screen name="TermsandConditions" component={TermsandConditions} />
         <Stack.Screen name="Home" component={DrawerStack} />
         <Stack.Screen name="Notifications" component={Notifications} />
         <Stack.Screen name="PaymentForm" component={PaymentForm} />

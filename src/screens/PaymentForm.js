@@ -6,8 +6,6 @@ import { windowHeight } from "../../src/utils/Dimensions";
 import { windowWidth } from "../../src/utils/Dimensions";
 import { Picker } from "@react-native-picker/picker";
 import AntDesign from "react-native-vector-icons/AntDesign";
-import PaymentInfo from "./PaymentInfo";
-import Home from "./Home";
 
 const PaymentForm = ({ navigation }) => {
   const [accname, setACCName] = useState("");
@@ -152,11 +150,7 @@ const PaymentForm = ({ navigation }) => {
               marginTop: 25,
             }}
           >
-            <Button
-              onPress={() => navigation.navigate(PaymentInfo)}
-              title="Add"
-              color="orange"
-            />
+            <Button title="Add" color="orange" />
           </View>
         </View>
       </View>

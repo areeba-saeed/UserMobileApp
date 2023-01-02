@@ -145,26 +145,11 @@ const Invoice = ({ navigation }) => {
             justifyContent: "space-around",
           }}
         >
-          <TouchableOpacity>
-            <Text
-              style={{
-                backgroundColor: "orange",
-                width: 100,
-                height: 40,
-                textAlign: "center",
-                paddingTop: 10,
-                color: "white",
-                borderRadius: 5,
-              }}
-            >
-              Print
-            </Text>
-          </TouchableOpacity>
           <TouchableOpacity onPress={() => setShow(true)}>
             <Text
               style={{
                 backgroundColor: "orange",
-                width: 100,
+                width: windowWidth - 40,
                 height: 40,
                 textAlign: "center",
                 paddingTop: 10,
@@ -263,10 +248,11 @@ const Invoice = ({ navigation }) => {
                     style={{
                       width: 250,
                       height: 200,
+                      paddingTop: 20,
                       flex: 1,
                       justifyContent: "center",
                       alignItems: "center",
-                      marginBottom: 60,
+                      marginBottom: 40,
                     }}
                   >
                     <Text>No image</Text>
