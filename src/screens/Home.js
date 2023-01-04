@@ -115,7 +115,7 @@ const Home = ({ navigation }) => {
                 alignItems: "center",
               }}
             >
-              <View
+              {/* <View
                 style={{
                   height: 130,
                   flexDirection: "row",
@@ -176,32 +176,62 @@ const Home = ({ navigation }) => {
                     80%
                   </Text>
                 </View>
-              </View>
+              </View> */}
               <View
                 style={{
                   width: 335,
-                  height: 120,
+                  height: 135,
                   backgroundColor: "#E6E6E6",
                   marginTop: 14,
-                  marginLeft: -3,
+                  justifyContent: "center",
+                  alignItems: "center",
                 }}
               >
-                <Cylinder
-                  style={{ marginTop: 30, marginLeft: 10 }}
-                  name="gas-cylinder"
+                <Weight
+                  style={{ marginRight: 80 }}
+                  name="weight"
                   size={60}
                   color="orange"
                 />
                 <Text
                   style={{
-                    fontSize: 26,
+                    fontSize: 40,
                     color: "orange",
                     fontWeight: "bold",
-                    marginLeft: 70,
-                    marginTop: -45,
+                    marginLeft: 90,
+                    marginTop: -50,
                   }}
                 >
-                  Excellent Status
+                  5 KG
+                </Text>
+              </View>
+              <View
+                style={{
+                  width: 335,
+                  height: 135,
+                  backgroundColor: "#E6E6E6",
+                  marginTop: 14,
+                  marginBottom: 14,
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <Battery
+                  style={{ marginRight: 80 }}
+                  name="battery"
+                  size={60}
+                  color="orange"
+                />
+                <Text
+                  style={{
+                    fontSize: 40,
+                    color: "orange",
+                    fontWeight: "bold",
+                    marginLeft: 90,
+                    marginTop: -50,
+                  }}
+                >
+                  66%
                 </Text>
               </View>
             </View>
