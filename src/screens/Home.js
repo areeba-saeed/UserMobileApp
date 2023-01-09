@@ -21,6 +21,7 @@ import Battery from "react-native-vector-icons/Entypo";
 import Cylinder from "react-native-vector-icons/MaterialCommunityIcons";
 
 import { SelectList } from "react-native-dropdown-select-list";
+import FCMNotification from "../components/FCMNotification";
 
 const Home = ({ navigation }) => {
   const [selected, setSelected] = React.useState("");
@@ -236,6 +237,9 @@ const Home = ({ navigation }) => {
               </View>
             </View>
           </View>
+        </View>
+        <View>
+          <FCMNotification />
         </View>
       </ScrollView>
     </SafeAreaView>

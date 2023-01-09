@@ -7,6 +7,7 @@ import PaymentForm from "../src/screens/PaymentForm";
 import DrawerStack from "./DrawerStack";
 import PrivacyPolicy from "../src/screens/PrivacyPolicy";
 import TermsandConditions from "../src/screens/TermsandConditions";
+import Invoice1 from "../src/screens/Invoice1";
 
 
 const Stack = createNativeStackNavigator();
@@ -22,6 +23,7 @@ const MyStack = () => {
         <Stack.Screen name="PrivacyPolicy" component={PrivacyPolicy} />
         <Stack.Screen name="TermsandConditions" component={TermsandConditions} />
         <Stack.Screen name="Home" component={DrawerStack} />
+        <Stack.Screen name="Invoice1" component={Invoice1} />
         <Stack.Screen name="Notifications" component={Notifications} />
         <Stack.Screen name="PaymentForm" component={PaymentForm} />
       </Stack.Navigator>
