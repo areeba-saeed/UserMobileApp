@@ -1,55 +1,42 @@
-import React, { Component } from "react";
+import React from "react";
 import { StyleSheet, View, Text, TouchableOpacity, Alert } from "react-native";
-import { Table, TableWrapper, Row, Cell } from "react-native-table-component";
+import { Table, Row } from "react-native-table-component";
 import { windowHeight, windowWidth } from "../utils/Dimensions";
 import { useNavigation } from "@react-navigation/native";
-import { FlatList, ScrollView } from "react-native-gesture-handler";
+import { FlatList } from "react-native-gesture-handler";
+
 import Invoice1 from "../screens/Invoice1";
 
-const Item = ({ Invoice_No, status, Amount }) => {
-  const index = 0;
-  function _alertIndex(index) {
-    Alert.alert(`This is row ${index + 1}`);
-  }
-  const navigation = useNavigation();
-
-  return (
-    <View style={styles.row}>
-      <Text style={styles.textId}>{Invoice_No}</Text>
-      <Text style={styles.text}>{status}</Text>
-      <Text style={styles.text}>{Amount}</Text>
-
-      <TouchableOpacity onPress={() => navigation.navigate(Invoice1)}>
-        <Text
-          style={{
-            backgroundColor: "orange",
-            width: 50,
-            height: 30,
-            textAlign: "center",
-            paddingTop: 5,
-            color: "white",
-            borderRadius: 5,
-          }}
-        >
-          Invoice
-        </Text>
-      </TouchableOpacity>
-    </View>
-  );
-};
 const InvoiceTable = ({ setClicked, data }) => {
   const tableHead = ["Invoice#", "Status", "Amount", "Action"];
-  const renderItem = ({ item }) => {
+  const navigation = useNavigation();
+
+  const renderItem = ({ item, index }) => {
     return (
-      <Item
-        Invoice_No={item.Invoice_No}
-        status={item.status}
-        Amount={item.Amount}
-      />
+      <View style={styles.row} key={index}>
+        <Text style={styles.text}>{item.Invoice_No}</Text>
+        <Text style={styles.text}>{item.status}</Text>
+        <Text style={styles.text}>{item.Amount}</Text>
+        <View style={{ width: "20%", marginLeft: 20 }}>
+          <TouchableOpacity onPress={() => navigation.navigate(Invoice1)}>
+            <Text
+              style={{
+                backgroundColor: "orange",
+                textAlign: "center",
+                fontSize: 12,
+                padding: 5,
+                color: "white",
+                borderRadius: 5,
+                marginTop: 5,
+              }}
+            >
+              Invoice
+            </Text>
+          </TouchableOpacity>
+        </View>
+      </View>
     );
   };
-
-  const navigation = useNavigation();
 
   return (
     <View
@@ -98,46 +85,39 @@ const styles = StyleSheet.create({
     height: 70,
     backgroundColor: "#D9DDDC",
     flexDirection: "row",
-    justifyContent: "space-between",
+    // justifyContent: "space-between",
   },
 
   headtext: {
-    width: windowWidth - 300,
-    marginLeft: 25,
-    marginRight: 20,
+    // borderColor:"red",
+    // borderWidth:2,
+    width: "100%",
+    textAlign: "center",
   },
   view: {
     height: 0,
   },
   text: {
-    width: windowWidth - 300,
-    margin: 8,
-    marginLeft: 15,
-    marginRight: 20,
-  },
-  textId: {
-    width: windowWidth - 300,
-    margin: 8,
-    marginLeft: 15,
-    paddingLeft: 25,
-    marginRight: 20,
+    width: "25%",
+    marginTop: 8,
+    textAlign: "center",
+    fontSize: 12,
   },
   row: {
     flexDirection: "row",
     backgroundColor: "lightgray",
+    // justifyContent: "space-between",
+    marginLeft: 4,
   },
 
-  btn: {
-    width: 60,
-    height: 20,
-    backgroundColor: "rgb(255, 177, 33)",
-    borderRadius: 2,
-    margin: 4,
-    marginTop: 8,
+  icon: {
+    marginLeft: 30,
   },
-  btnText: {
-    textAlign: "center",
-    color: "#fff",
+  icons: {
+    marginTop: 8,
+    marginRight: 20,
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
 });
 

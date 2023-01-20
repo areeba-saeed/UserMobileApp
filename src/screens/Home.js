@@ -21,7 +21,7 @@ import Battery from "react-native-vector-icons/Entypo";
 import Cylinder from "react-native-vector-icons/MaterialCommunityIcons";
 
 import { SelectList } from "react-native-dropdown-select-list";
-import FCMNotification from "../components/FCMNotification";
+// import FCMNotification from "../components/FCMNotification";
 
 const Home = ({ navigation }) => {
   const [selected, setSelected] = React.useState("");
@@ -36,9 +36,7 @@ const Home = ({ navigation }) => {
 
   const nav = useNavigation();
 
-  const onButtonPressed = () => {
-    Alert.alert("Button Pressed");
-  };
+ 
 
   return (
     <SafeAreaView
@@ -48,7 +46,6 @@ const Home = ({ navigation }) => {
         flex: 1,
       }}
     >
-      <ScrollView>
         <View
           style={{
             flex: 1,
@@ -69,6 +66,8 @@ const Home = ({ navigation }) => {
                 flexDirection: "row",
                 justifyContent: "space-between",
                 marginTop: 20,
+
+                marginBottom: "10%",
               }}
             >
               <TouchableOpacity onPress={() => nav.openDrawer()}>
@@ -91,16 +90,23 @@ const Home = ({ navigation }) => {
             </View>
             <View
               style={{
-                alignItems: "center",
-                marginTop: windowHeight - 700,
+                // alignItems: "center",
+                // borderColor: "red",
+                // borderWidth: 2,
+                width: windowWidth,
+                marginTop: "-5%",
+                marginLeft: "17%",
+                marginRight: "12%",
+                marginBottom: "-7%",
               }}
             >
               <Image
                 source={require("../../assets/images/logo_1.png")}
                 style={{
                   height: windowHeight - 450,
-                  width: windowWidth - 85,
-                  marginLeft: 60,
+                  width: "80%",
+                  alignItems: "center",
+                  resizeMode: "contain",
                 }}
               />
             </View>
@@ -116,71 +122,9 @@ const Home = ({ navigation }) => {
                 alignItems: "center",
               }}
             >
-              {/* <View
-                style={{
-                  height: 130,
-                  flexDirection: "row",
-                  marginTop: 50,
-                  marginLeft: -3,
-                  marginRight: 0,
-                  marginTop: 40,
-                }}
-              >
-                <View
-                  style={{
-                    width: 160,
-                    height: 135,
-                    backgroundColor: "#E6E6E6",
-                  }}
-                >
-                  <Weight
-                    style={{ marginTop: 50, marginLeft: 10 }}
-                    name="weight"
-                    size={40}
-                    color="orange"
-                  />
-                  <Text
-                    style={{
-                      fontSize: 26,
-                      color: "orange",
-                      fontWeight: "bold",
-                      marginLeft: 70,
-                      marginTop: -40,
-                    }}
-                  >
-                    5 KG
-                  </Text>
-                </View>
-                <View
-                  style={{
-                    width: 160,
-                    height: 135,
-                    backgroundColor: "#E6E6E6",
-                    marginLeft: 14,
-                  }}
-                >
-                  <Battery
-                    style={{ marginTop: 50, marginLeft: 10 }}
-                    name="battery"
-                    size={40}
-                    color="orange"
-                  />
-                  <Text
-                    style={{
-                      fontSize: 26,
-                      color: "orange",
-                      fontWeight: "bold",
-                      marginLeft: 70,
-                      marginTop: -40,
-                    }}
-                  >
-                    80%
-                  </Text>
-                </View>
-              </View> */}
               <View
                 style={{
-                  width: 335,
+                  width: "100%",
                   height: 135,
                   backgroundColor: "#E6E6E6",
                   marginTop: 14,
@@ -208,7 +152,7 @@ const Home = ({ navigation }) => {
               </View>
               <View
                 style={{
-                  width: 335,
+                  width: "100%",
                   height: 135,
                   backgroundColor: "#E6E6E6",
                   marginTop: 14,
@@ -238,10 +182,9 @@ const Home = ({ navigation }) => {
             </View>
           </View>
         </View>
-        <View>
+        {/* <View>
           <FCMNotification />
-        </View>
-      </ScrollView>
+        </View> */}
     </SafeAreaView>
   );
 };
