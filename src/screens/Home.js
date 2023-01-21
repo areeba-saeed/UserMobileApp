@@ -36,8 +36,6 @@ const Home = ({ navigation }) => {
 
   const nav = useNavigation();
 
- 
-
   return (
     <SafeAreaView
       style={{
@@ -46,143 +44,143 @@ const Home = ({ navigation }) => {
         flex: 1,
       }}
     >
+      <View
+        style={{
+          flex: 1,
+          backgroundColor: "lightgray",
+        }}
+      >
         <View
           style={{
-            flex: 1,
             backgroundColor: "lightgray",
+            height: "45%",
+            borderBottomLeftRadius: 20,
+            borderBottomRightRadius: 20,
+            paddingHorizontal: 20,
           }}
         >
           <View
             style={{
-              backgroundColor: "lightgray",
-              height: "45%",
-              borderBottomLeftRadius: 20,
-              borderBottomRightRadius: 20,
-              paddingHorizontal: 20,
+              flexDirection: "row",
+              justifyContent: "space-between",
+              marginTop: 20,
+
+              marginBottom: "10%",
+            }}
+          >
+            <TouchableOpacity onPress={() => nav.openDrawer()}>
+              <AntDesign name="bars" size={30} color="orange" />
+            </TouchableOpacity>
+            <Text
+              style={{
+                fontSize: 28,
+                color: "orange",
+                fontWeight: "bold",
+              }}
+            >
+              Home
+            </Text>
+            <TouchableOpacity
+              onPress={() => navigation.navigate(Notifications)}
+            >
+              <Ionicons name="notifications" size={30} color="orange" />
+            </TouchableOpacity>
+          </View>
+          <View
+            style={{
+              // alignItems: "center",
+              // borderColor: "red",
+              // borderWidth: 2,
+              width: windowWidth,
+              marginTop: "-5%",
+              marginLeft: "17%",
+              marginRight: "12%",
+              marginBottom: "-7%",
+            }}
+          >
+            <Image
+              source={require("../../assets/images/logo_1.png")}
+              style={{
+                height: windowHeight - 450,
+                width: "80%",
+                alignItems: "center",
+                resizeMode: "contain",
+              }}
+            />
+          </View>
+
+          <SelectList
+            setSelected={setSelected}
+            data={data}
+            onSelect={() => alert(selected)}
+          />
+
+          <View
+            style={{
+              alignItems: "center",
             }}
           >
             <View
               style={{
-                flexDirection: "row",
-                justifyContent: "space-between",
-                marginTop: 20,
-
-                marginBottom: "10%",
-              }}
-            >
-              <TouchableOpacity onPress={() => nav.openDrawer()}>
-                <AntDesign name="bars" size={30} color="orange" />
-              </TouchableOpacity>
-              <Text
-                style={{
-                  fontSize: 28,
-                  color: "orange",
-                  fontWeight: "bold",
-                }}
-              >
-                Home
-              </Text>
-              <TouchableOpacity
-                onPress={() => navigation.navigate(Notifications)}
-              >
-                <Ionicons name="notifications" size={30} color="orange" />
-              </TouchableOpacity>
-            </View>
-            <View
-              style={{
-                // alignItems: "center",
-                // borderColor: "red",
-                // borderWidth: 2,
-                width: windowWidth,
-                marginTop: "-5%",
-                marginLeft: "17%",
-                marginRight: "12%",
-                marginBottom: "-7%",
-              }}
-            >
-              <Image
-                source={require("../../assets/images/logo_1.png")}
-                style={{
-                  height: windowHeight - 450,
-                  width: "80%",
-                  alignItems: "center",
-                  resizeMode: "contain",
-                }}
-              />
-            </View>
-
-            <SelectList
-              setSelected={setSelected}
-              data={data}
-              onSelect={() => alert(selected)}
-            />
-
-            <View
-              style={{
+                width: "100%",
+                height: 135,
+                backgroundColor: "#E6E6E6",
+                marginTop: 14,
+                justifyContent: "center",
                 alignItems: "center",
               }}
             >
-              <View
+              <Weight
+                style={{ marginRight: "20%" }}
+                name="weight"
+                size={60}
+                color="orange"
+              />
+              <Text
                 style={{
-                  width: "100%",
-                  height: 135,
-                  backgroundColor: "#E6E6E6",
-                  marginTop: 14,
-                  justifyContent: "center",
-                  alignItems: "center",
+                  fontSize: 40,
+                  color: "orange",
+                  fontWeight: "bold",
+                  marginLeft: "15%",
+                  marginTop: "-10%",
                 }}
               >
-                <Weight
-                  style={{ marginRight: 80 }}
-                  name="weight"
-                  size={60}
-                  color="orange"
-                />
-                <Text
-                  style={{
-                    fontSize: 40,
-                    color: "orange",
-                    fontWeight: "bold",
-                    marginLeft: 90,
-                    marginTop: -50,
-                  }}
-                >
-                  5 KG
-                </Text>
-              </View>
-              <View
+                5 KG
+              </Text>
+            </View>
+            <View
+              style={{
+                width: "100%",
+                height: 135,
+                backgroundColor: "#E6E6E6",
+                marginTop: 14,
+                marginBottom: 14,
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Battery
+                style={{ marginRight: "20%" }}
+                name="battery"
+                size={60}
+                color="orange"
+              />
+              <Text
                 style={{
-                  width: "100%",
-                  height: 135,
-                  backgroundColor: "#E6E6E6",
-                  marginTop: 14,
-                  marginBottom: 14,
-                  justifyContent: "center",
-                  alignItems: "center",
+                  fontSize: 40,
+                  color: "orange",
+                  fontWeight: "bold",
+                  marginLeft: "15%",
+                  marginTop: "-10%",
                 }}
               >
-                <Battery
-                  style={{ marginRight: 80 }}
-                  name="battery"
-                  size={60}
-                  color="orange"
-                />
-                <Text
-                  style={{
-                    fontSize: 40,
-                    color: "orange",
-                    fontWeight: "bold",
-                    marginLeft: 90,
-                    marginTop: -50,
-                  }}
-                >
-                  66%
-                </Text>
-              </View>
+                66%
+              </Text>
             </View>
           </View>
         </View>
-        {/* <View>
+      </View>
+      {/* <View>
           <FCMNotification />
         </View> */}
     </SafeAreaView>
